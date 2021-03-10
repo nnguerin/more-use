@@ -1,16 +1,50 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import Loader from "react-loader-spinner";
 
 
 function App() {
+  const [ clSearch, setCLSearch ] = useState({
+    results: []
+  })
+
+  useEffect( () => {
+    const response = axios
+    .get('http://localhost:3001/api/craigslistsearch')
+    .then( response => {
+      console.log("response from api", response.data);
+      setCLSearch(response.data)
+    })
+    .catch( error => {
+      console.log(error);
+    })
+    .then( () => {
+      console.log('ran axios');
+    })
+  }, [])
+    
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          test
-        </p>
+        
+          {clSearch.results.length>0
+          ? <ul>
+            {clSearch.results.map( result => {
+            return <li key={result.id} >{result.title}</li>
+            })}
+            </ul>
+          : <Loader
+              type="Puff"
+              color="#00BFFF"
+              height={100}
+              width={100}
+              timeout={3000} //3 secs
+            />
+          }
         <a
           className="App-link"
           href="https://reactjs.org"
