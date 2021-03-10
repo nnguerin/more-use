@@ -34,7 +34,13 @@ function App() {
           {clSearch.results.length>0
           ? <ul>
             {clSearch.results.map( result => {
-            return <li key={result.id} >{result.title}</li>
+            return  <li key={result.id}>
+                      <img src={result.img} /><br/>
+                      <a href={result.link}>Title: {result.title}</a>
+                      <p>Price: {result.price}</p>
+                      <p>Location: {result.location}</p>
+                      <p>Date Posted: {result.date}</p>
+                    </li>
             })}
             </ul>
           : <Loader
