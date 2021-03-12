@@ -4,7 +4,6 @@ import './App.css';
 import axios from 'axios'
 import Loader from "react-loader-spinner";
 
-
 function App() {
   const [ clSearch, setCLSearch ] = useState({
     results: []
