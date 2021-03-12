@@ -30,6 +30,8 @@ const useStyles = makeStyles(styles);
 export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
+
+  console.log("image ", require("assets/img/background.jpg").default);
   return (
     <div>
       <Header
@@ -47,7 +49,7 @@ export default function LandingPage(props) {
       <Parallax
         filter  
         image={require("assets/img/background.jpg").default}
-        style={{ maxHeight: '50vh' }}>
+        >
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>

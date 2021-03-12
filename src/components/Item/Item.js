@@ -41,7 +41,7 @@ const Item = (props) => {
         })
     }
 
-    console.log(item);
+    console.log("item", item);
 
   const classes = useStyles();
   return (
@@ -62,12 +62,7 @@ const Item = (props) => {
         <Link href={item.link}>
             <Button color="primary" round >Go to site!</Button>
         </Link>
-        <InfoArea
-            title={<CurrencyFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={'$'} />}
-            icon={AttachMoneyIcon}
-            iconColor="success"
-            style={{color: 'green'}}
-        />
+        <AttachMoneyIcon /><CurrencyFormat value={item.price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
       </CardBody>
     </Card>
   );
