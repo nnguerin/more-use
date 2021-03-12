@@ -31,7 +31,6 @@ export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
 
-  console.log("image ", require("assets/img/background.jpg").default);
   return (
     <div>
       <Header

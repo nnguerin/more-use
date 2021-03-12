@@ -41,12 +41,12 @@ const Item = (props) => {
         })
     }
 
-    console.log("item", item);
+    console.log("loaded an item");
 
   const classes = useStyles();
   return (
-    <Card style={{width: "20rem"}}>
-      <AspectRatio ratio="3/4" style={{ maxWidth: '400px'}}>
+    <Card style={{ width: "20rem"}}>
+      <AspectRatio ratio="3/4" style={{ maxWidth: '20rem'}}>
         <a href={item.link}>
             <img
             className={classes.imgCardTop}
