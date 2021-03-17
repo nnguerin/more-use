@@ -8,6 +8,12 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/prod
 import { makeStyles } from "@material-ui/core/styles";
 import Searchbar from "./Sections/Searchbar";
 import Results from './Sections/Results'
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import CustomInput from "components/CustomInput/CustomInput.js";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import DollarSign from '@material-ui/icons/AttachMoney';
+import Button from "components/CustomButtons/Button.js";
 
 const useStyles = makeStyles(styles);
 
@@ -18,6 +24,8 @@ const Search = () => {
     craigslist: []
   })
 
+  const allResults = results.craigslist
+
   const handleResults = (newResults) => {
     setResults({ ...results, craigslist: newResults.craigslist })
   }
@@ -25,6 +33,8 @@ const Search = () => {
   const handleLoading = (loading) => {
     setLoading(loading)
   }
+
+  console.log("display results", allResults);
 
   return (    
     <div>
@@ -38,7 +48,7 @@ const Search = () => {
             width={100}
             timeout={3000} //3 secs
           />
-        : <Results results={results} />
+        : <Results results={allResults} />
       }
     </div> 
   )

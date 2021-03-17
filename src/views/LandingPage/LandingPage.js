@@ -36,7 +36,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand='Guerin-T Technology'
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -63,9 +63,6 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <Search />
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
         </div>
       </div>
       <Footer />
